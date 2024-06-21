@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <style>
+        .spaced-link {
+            margin-right: 20px; /* Adjust the value as needed */
+        }
+    </style>
+</head>
+<body>
+<h1>Hello</h1>
+<p>
+    User: <span sec:authentication="principal.username"></span>
+    <br><br>
+    Role(s): <span sec:authentication="principal.authorities"></span>
+</p>
+
+<a sec:authorize="hasRole('SALES')" th:href="@{/customer}" class="spaced-link">customer</a>
+<a th:href="@{/billing}" class="spaced-link">billing</a>
+<a th:href="@{/payroll}" class="spaced-link">payroll</a>
+<a th:href="@{/user}" class="spaced-link">user</a>
+<br><br>
+<form action="#" th:action="@{/logout}" method="post">
+    <button type="submit" class="btn btn-info">Logout</button>
+</form>
+</body>
+</html>
