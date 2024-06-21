@@ -8,9 +8,9 @@ This Spring Boot application shows how role based authentication works
 - Maven
 - MySQL
 
-Application runs on port 8081
+Application runs on port 8081  
 
-mysql username = root 
-mysql password = root 
+mysql username = root  
+mysql password = root  
 mysql database name = unboxing
 
